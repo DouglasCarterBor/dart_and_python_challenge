@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 void main() {
@@ -17,11 +16,13 @@ void main() {
       var minutesIndex = durationParts.indexOf('min');
       var secondsIndex = durationParts.indexOf('s');
 
-      if (hoursIndex != -1 && minutesIndex != -1) {
+      if (hoursIndex != -1) {
         var hours = int.parse(durationParts[hoursIndex - 1]);
-        var minutes = int.parse(durationParts[minutesIndex - 1]);
-        
         totalHours += hours;
+      }
+
+      if (minutesIndex != -1) {
+        var minutes = int.parse(durationParts[minutesIndex - 1]);
         totalMinutes += minutes;
       }
 
